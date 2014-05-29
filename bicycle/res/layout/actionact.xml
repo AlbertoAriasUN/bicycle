@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" 
+    android:background="@color/background">
+
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_centerInParent="true">
+	        <RelativeLayout 
+	        android:layout_width="280dp"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true">  
+		    	<Button 
+		       	 android:id="@+id/ActionAct_Build"
+			     android:background="@drawable/bg_but"
+			     android:textColor="@color/textD"
+			     android:text="我要\n打车"
+			     android:textSize="19sp"
+			     android:layout_width="150dp"
+			     android:layout_height="150dp"	          />
+		       
+		       <Button 
+		       	 android:id="@+id/ActionAct_Search"
+			     android:background="@drawable/bg_but"
+			     android:textColor="@color/textD"	
+			     android:text="我想\n载人"
+			     android:textSize="19sp"
+			     android:layout_width="150dp"
+			     android:layout_height="150dp"
+			     android:layout_marginLeft="130dp"	          />
+	         </RelativeLayout>
+	         
+	         <Button 
+	       	 android:id="@+id/ActionAct_Oreder"
+		     android:background="@drawable/bg_but"
+		     android:textColor="@color/textD"
+		     android:layout_centerHorizontal="true"	
+		     android:layout_marginTop="120dp" 
+		     android:text="我的\n订单"
+		     android:textSize="19sp"
+		     android:layout_width="150dp"
+		     android:layout_height="150dp"	          />
+    </RelativeLayout>
+   
+
+</RelativeLayout>

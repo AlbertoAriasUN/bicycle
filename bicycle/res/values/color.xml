@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<color name="white">#FFFFFFFF</color> 
+<color name="background">#22353c</color>  
+<color name="highlight">#DDFFFFFF</color>  
+<color name="textD">#77FFFFFF</color>
+<color name="textD_BG">#30000000</color>
+<color name="textL">#77000000</color>
+<color name="textL_BG">#30FFFFFF</color>   
+<color name="lineL">#77FFFFFF</color>  
+</resources>

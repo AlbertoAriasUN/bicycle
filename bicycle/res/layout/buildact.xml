@@ -1,0 +1,100 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"  
+    android:scrollbars="none"
+    tools:context=".MainActivity" 
+    android:background="@color/background">
+    
+    <LinearLayout 
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="25dp">
+         <TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="出发地点："
+		    android:textSize="19sp"
+		    android:textColor="@color/lineL"
+		  />
+         <Spinner 
+             android:id="@+id/BuildAct_LocationA"
+             android:background="@drawable/bg_but_r"
+             android:layout_width="fill_parent"
+             android:layout_marginTop="10dp"
+             android:layout_height="35dp"/>       
+         <View    
+	        android:layout_height="2px"   
+	        android:background="@color/lineL"   
+	        android:layout_width="fill_parent"
+	        android:layout_marginTop="20dp"
+	        android:layout_marginBottom="20dp"/> 
+			
+         <TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="目的地点："
+		    android:textSize="19sp"
+		    android:textColor="@color/lineL"
+		  />
+         <Spinner 
+             android:id="@+id/BuildAct_LocationB"
+             android:background="@drawable/bg_but_r"
+             android:layout_marginTop="10dp"
+             android:layout_width="fill_parent"
+             android:layout_height="35dp"/>       
+         <View    
+	        android:layout_height="2px"   
+	        android:background="@color/lineL"   
+	        android:layout_width="fill_parent"
+	         android:layout_marginTop="20dp"
+	        android:layout_marginBottom="20dp"/> 
+         
+         <TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="出发时间："
+		    android:textSize="19sp"
+		    android:textColor="@color/lineL"
+		  />
+         
+         <Button 
+      	     android:id="@+id/BuildAct_Time"
+		     android:background="@drawable/bg_edittext_normal"
+		     android:gravity="left|bottom"
+		     android:textColor="@color/textD" 
+		     android:text="请输入出发时间"
+		     android:textSize="17sp"
+		     android:layout_width="250dp"
+		     android:layout_height="35dp"		     
+     	/>
+         <View    
+	        android:layout_height="1px" 
+	        android:background="@color/lineL"   
+	        android:layout_width="250dp"/> 
+         
+         <View    
+	        android:layout_height="2px"   
+	        android:background="@color/lineL"   
+	        android:layout_width="fill_parent"
+	         android:layout_marginTop="20dp"
+	        android:layout_marginBottom="20dp"/> 
+			
+         
+         
+      	<Button 
+      	     android:id="@+id/BuildAct_Build"
+		     android:background="@drawable/bg_but_r"
+		     android:layout_gravity="center"
+		     android:textColor="@color/textD" 
+		     android:text="创 建 订 单"
+		     android:textSize="19sp"
+		     android:layout_width="250dp"
+		     android:layout_height="35dp"		     
+     	/>
+    </LinearLayout>  
+
+</ScrollView>

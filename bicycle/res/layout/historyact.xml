@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="@color/background"
+    android:gravity="center_horizontal">
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="30dp"
+           android:orientation="vertical" >
+
+	      <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal">   	             
+	        <Button 
+		     android:background="@color/textD_BG"
+		     android:textColor="@color/textD"	   
+		     android:layout_gravity="left"	   
+		     android:text="进行中"
+		     android:textSize="19sp"
+		     android:layout_width="135dp"
+		     android:layout_height="35dp"
+		     android:id="@+id/HistoryAct_order"
+	     />	     
+	      <Button 
+		     android:background="@color/textL_BG"
+		     android:textColor="@color/textL"
+		     android:layout_gravity="right"	
+		     android:layout_marginLeft="20dp" 
+		     android:text="历史记录"
+		     android:textSize="19sp"
+		     android:layout_width="135dp"
+		     android:layout_height="35dp"
+	     />
+	    </LinearLayout>
+	     <View    
+	        android:layout_height="2px"   
+	        android:background="@color/textL_BG"   
+	        android:layout_width="match_parent">  
+		</View>  
+	</LinearLayout>
+	
+     <ListView  
+        android:id="@+id/HistoryAct_Listview"  
+        android:layout_width="290dp"  
+        android:layout_height="fill_parent" >  
+    </ListView> 
+
+</LinearLayout>
