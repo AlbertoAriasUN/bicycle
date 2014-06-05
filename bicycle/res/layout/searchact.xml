@@ -27,6 +27,7 @@
 			     android:layout_gravity="center_horizontal"
 			     android:hint="请输入搜索关键词"
 			     android:textColorHint="@color/lineL"
+			     android:singleLine="true"
 		        />
              <View    
 		        android:layout_height="1px"   
@@ -50,13 +51,22 @@
      	/>
          
     </LinearLayout>
-   
-     
     
-     <ListView  
+    <TextView
+    	android:id="@+id/NoInfo"  
+       	android:layout_width="2900dp"  
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:text = "无相关信息"
+        android:textSize="16sp"
+        android:textColor="@color/highlight"
+        android:gravity="center_horizontal"
+        android:visibility="gone"/>
+    
+    <ListView  
         android:id="@+id/SearchAct_Listview"  
         android:layout_width="290dp"  
-        android:layout_height="fill_parent" >  
+        android:layout_height="fill_parent" >
     </ListView> 
 
 </LinearLayout>

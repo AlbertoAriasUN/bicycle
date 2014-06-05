@@ -1,10 +1,17 @@
 package com.example.bicycle;
 
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.KeyEvent;
-import android.view.Menu;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,8 +20,15 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class RegisterAct extends Activity {
-
-	int sex = 1;
+	private static final String SERVERIP = "172.18.159.219";
+	private static final int SERVERPORT = 10000;
+	private Socket mSocket = null;
+	private ObjectOutputStream out = null;
+	private DataInputStream in = null;
+	private RegisterData registerData = new RegisterData();
+	
+	private int sex;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,7 +47,7 @@ public class RegisterAct extends Activity {
 				// TODO Auto-generated method stub
 				if(arg1 == radioMale.getId())
 					sex = 1;
-				else
+				else if (arg1 == radioFemale.getId())
 					sex = 0;
 			}
 		});
@@ -44,8 +58,9 @@ public class RegisterAct extends Activity {
 			@Override
 			public void onClick(View v) {
 				// 登陆的触发函数
-				Intent intent = new Intent(RegisterAct.this, LoginAct.class);  
-			    startActivity(intent); 
+			//	Intent intent = new Intent(RegisterAct.this, LoginAct.class);  
+			//  startActivity(intent);
+			    finish();
 			}
 		});
 		
@@ -55,16 +70,54 @@ public class RegisterAct extends Activity {
 			@Override
 			public void onClick(View v) {
 				//注册的触发函数
+				registerData.name = editUserName.getText().toString();
+				registerData.password = editPassWord.getText().toString();
+				registerData.sex = sex;
+				registerData.phNum = editPhone.getText().toString();
 				
-				String a = "Name:"+editUserName.getText()+"\nPassword:"+editPassWord.getText()+"\nSex:"+sex+"\nPhone:"+editPhone.getText();
-				Toast.makeText(RegisterAct.this, a, Toast.LENGTH_SHORT).show();
-				Intent intentB = new Intent(RegisterAct.this, ActionAct.class);  
-			    startActivity(intentB); 
+				if (registerData.name.equals("") || registerData.password.equals("")) {
+					Toast.makeText(RegisterAct.this, "用户名或密码不能为空", Toast.LENGTH_LONG).show();
+				} else if (registerData.name.length() < 4 || registerData.name.length() > 8 
+						|| registerData.password.length() < 4 || registerData.password.length() > 8) {
+					Toast.makeText(RegisterAct.this, "用户名或密码长度不符合要求", Toast.LENGTH_LONG).show();
+				} else if (registerData.phNum.equals("")) {
+					Toast.makeText(RegisterAct.this, "手机号码不能为空", Toast.LENGTH_LONG).show();
+				} else {
+					new Thread(new Runnable() {
+						public void run() {
+							try {
+								mSocket = new Socket(SERVERIP, SERVERPORT);
+								
+								out = new ObjectOutputStream(mSocket.getOutputStream());
+								in = new DataInputStream(new BufferedInputStream(mSocket.getInputStream()));
+								
+								out.writeObject(registerData);
+								out.flush();
+							//	out.close();
+									
+								int cookie = in.readInt();
+							//	in.close();
+								
+								SharedPreferences sharedPreferences = getSharedPreferences("cookie", MODE_PRIVATE);
+								Editor editor = sharedPreferences.edit();
+								editor.putInt("cookie", cookie);
+								editor.commit();
+								
+								Intent intent = new Intent(RegisterAct.this, ActionAct.class);  
+							    startActivity(intent);
+							    finish();
+							} catch (UnknownHostException e) {
+								// TODO 自动生成的 catch 块
+								e.printStackTrace();
+							} catch (IOException e) {
+								// TODO 自动生成的 catch 块
+								e.printStackTrace();
+							}
+							
+						}
+					}).start();
+				}
 			}
 		}); 
 	}
-	
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		return true;
-      }
 }
