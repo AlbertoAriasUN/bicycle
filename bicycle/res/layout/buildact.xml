@@ -25,9 +25,10 @@
              android:background="@drawable/bg_but_r"
              android:layout_width="fill_parent"
              android:layout_marginTop="10dp"
-             android:layout_height="35dp"/>       
+             android:layout_height="35dp"
+             android:paddingLeft="5dp" />
          <View    
-	        android:layout_height="2px"   
+	        android:layout_height="2dp"   
 	        android:background="@color/lineL"   
 	        android:layout_width="fill_parent"
 	        android:layout_marginTop="20dp"
@@ -45,9 +46,10 @@
              android:background="@drawable/bg_but_r"
              android:layout_marginTop="10dp"
              android:layout_width="fill_parent"
-             android:layout_height="35dp"/>       
+             android:layout_height="35dp"
+             android:paddingLeft="5dp" />       
          <View    
-	        android:layout_height="2px"   
+	        android:layout_height="2dp"   
 	        android:background="@color/lineL"   
 	        android:layout_width="fill_parent"
 	         android:layout_marginTop="20dp"
@@ -66,7 +68,7 @@
 		     android:background="@drawable/bg_edittext_normal"
 		     android:gravity="left|bottom"
 		     android:textColor="@color/textD" 
-		     android:text="请输入出发时间"
+		     android:text="请选择出发时间"
 		     android:textSize="17sp"
 		     android:layout_width="250dp"
 		     android:layout_height="35dp"		     
@@ -77,13 +79,11 @@
 	        android:layout_width="250dp"/> 
          
          <View    
-	        android:layout_height="2px"   
+	        android:layout_height="2dp"   
 	        android:background="@color/lineL"   
 	        android:layout_width="fill_parent"
 	         android:layout_marginTop="20dp"
 	        android:layout_marginBottom="20dp"/> 
-			
-         
          
       	<Button 
       	     android:id="@+id/BuildAct_Build"

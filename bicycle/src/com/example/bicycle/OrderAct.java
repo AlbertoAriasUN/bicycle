@@ -7,14 +7,12 @@ import java.util.List;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 public class OrderAct extends Activity {
 
@@ -30,7 +28,7 @@ public class OrderAct extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(OrderAct.this, HistoryAct.class);  
-			    startActivity(intent); 
+			    startActivity(intent);
 			}
 		});
 		
@@ -39,12 +37,13 @@ public class OrderAct extends Activity {
 		
 		///////////////////////////////////////////////////////
 		HashMap<String,Object> Map = new HashMap<String,Object>();
-		Map.put("LocaA", "慎思园\n7号");
-		Map.put("LocaB", "公教");
-		Map.put("Time", "5月22日，9:00");
+		Map.put("LocaA", "慎思园");
+		Map.put("LocaB", "公共\n教学楼");
+		Map.put("Time", "6月25日，9:00");
 		OrderData.add(Map);
 		///////////////////////////////////////////////////////
-		SimpleAdapter adapter = new SimpleAdapter(this, OrderData, R.layout.orderitem, new String[]{"LocaA","LocaB","Time"}, new int[]{R.id.LocaA,R.id.LocaB,R.id.Time});
+		SimpleAdapter adapter = new SimpleAdapter(this, OrderData, R.layout.orderitem,
+				new String[]{"LocaA", "LocaB", "Time"}, new int[]{R.id.LocaA, R.id.LocaB, R.id.Time});
 		listview.setAdapter(adapter);
 		
 		listview.setOnItemClickListener(new OnItemClickListener(){
@@ -53,10 +52,11 @@ public class OrderAct extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(OrderAct.this,AnOrderAct.class);  
-			    intent.putExtra("OrderID", 1);
+				Intent intent = new Intent(OrderAct.this, AnOrderAct.class);  
+			    intent.putExtra("OrderID", 2);
 				startActivity(intent);
-			}});
+			}
+		});
 
 	}
 }

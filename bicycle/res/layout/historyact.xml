@@ -8,7 +8,7 @@
     android:background="@color/background"
     android:gravity="center_horizontal">
 
-       <LinearLayout
+    <LinearLayout
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginTop="30dp"
@@ -27,8 +27,8 @@
 		     android:layout_width="135dp"
 		     android:layout_height="35dp"
 		     android:id="@+id/HistoryAct_order"
-	     />	     
-	      <Button 
+	     	/>	     
+	      	<Button 
 		     android:background="@color/textL_BG"
 		     android:textColor="@color/textL"
 		     android:layout_gravity="right"	
@@ -37,16 +37,16 @@
 		     android:textSize="19sp"
 		     android:layout_width="135dp"
 		     android:layout_height="35dp"
-	     />
+	     	/>
 	    </LinearLayout>
 	     <View    
-	        android:layout_height="2px"   
+	        android:layout_height="2dp"   
 	        android:background="@color/textL_BG"   
 	        android:layout_width="match_parent">  
 		</View>  
 	</LinearLayout>
 	
-     <ListView  
+    <ListView  
         android:id="@+id/HistoryAct_Listview"  
         android:layout_width="290dp"  
         android:layout_height="fill_parent" >  

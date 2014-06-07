@@ -7,13 +7,11 @@ import java.util.List;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class HistoryAct extends Activity {
@@ -29,8 +27,7 @@ public class HistoryAct extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(HistoryAct.this, OrderAct.class);  
-			    startActivity(intent); 
+			    finish();
 			}
 		});
 		
@@ -39,12 +36,13 @@ public class HistoryAct extends Activity {
 		
 		///////////////////////////////////////////////////////
 		HashMap<String,Object> Map = new HashMap<String,Object>();
-		Map.put("LocaA", "三饭");
+		Map.put("LocaA", "至善园");
 		Map.put("LocaB", "图书馆");
-		Map.put("Time", "5月22日，9:00");
+		Map.put("Time", "6月22日，9:00");
 		OrderData.add(Map);
 		///////////////////////////////////////////////////////
-		SimpleAdapter adapter = new SimpleAdapter(this, OrderData, R.layout.orderitem, new String[]{"LocaA","LocaB","Time"}, new int[]{R.id.LocaA,R.id.LocaB,R.id.Time});
+		SimpleAdapter adapter = new SimpleAdapter(this, OrderData, R.layout.orderitem,
+				new String[]{"LocaA", "LocaB", "Time"}, new int[]{R.id.LocaA, R.id.LocaB, R.id.Time});
 		listview.setAdapter(adapter);
 		
 		listview.setOnItemClickListener(new OnItemClickListener(){
@@ -56,7 +54,8 @@ public class HistoryAct extends Activity {
 				Intent intent = new Intent(HistoryAct.this,AnOrderAct.class);  
 			    intent.putExtra("OrderID", 2);
 				startActivity(intent);
-			}});
+			}
+		});
 		
 	}
 }
