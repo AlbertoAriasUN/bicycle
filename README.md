@@ -6,4 +6,5 @@ bicycle-校园自行车打车应用
 <hr/>
 <h4>目录说明：</h4>
 <p><b>bicycle：</b>android客户端源码</P>
+<p><b>database：</b>数据库文件</P>
 <p><b>server：</b>服务端源码</P>
