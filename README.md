@@ -5,5 +5,5 @@ bicycle-校园自行车打车应用
 <p>主要实现了一个在中大东校区使用的自行车打车的应用。</p>
 <hr/>
 <h4>目录说明：</h4>
-<p>bicycle：android客户端</P>
-<p>server：服务端</P>
+<p><b>bicycle：</b>android客户端源码</P>
+<p><b>server：</b>服务端源码</P>
